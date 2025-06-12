@@ -19,4 +19,15 @@ export const auth = betterAuth({
       ...schema,
     },
   }),
+  user: {
+    additionalFields: {
+      role: {
+        type: "string",
+        values: ["user", "admin"],
+        required: false,
+        defaultValue: "user",
+        input: true,
+      },
+    },
+  },
 });
