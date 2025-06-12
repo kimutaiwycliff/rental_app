@@ -42,13 +42,13 @@ export const SignInView = () => {
       {
         email: data.email,
         password: data.password,
-        callbackURL: '/',
+        callbackURL: '/landing',
       },
       {
         onSuccess: () => {
           setPending(false);
           toast.success('Logged in successfully', { id: toastId });
-          router.push('/');
+          router.push('/landing');
         },
         onError: ({ error }) => {
           setPending(false);
@@ -66,13 +66,13 @@ export const SignInView = () => {
     authClient.signIn.social(
       {
         provider: provider,
-        callbackURL: '/',
+        callbackURL: '/landing',
       },
       {
         onSuccess: () => {
           setPending(false);
           toast.success('Logged in successfully', { id: toastId });
-          router.push('/');
+          router.push('/landing');
         },
         onError: ({ error }) => {
           setPending(false);

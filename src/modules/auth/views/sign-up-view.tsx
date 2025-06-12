@@ -45,13 +45,13 @@ export const SignUpView = () => {
         name: data.name,
         email: data.email,
         password: data.password,
-        callbackURL: "/",
+        callbackURL: "/landing",
       },
       {
         onSuccess: () => {
           setPending(false);
           toast.success(' Signed up successfully', { id: toastId });
-          router.push("/");
+          router.push("/landing");
         },
         onError: ({ error }) => {
           setPending(false);
@@ -69,13 +69,13 @@ export const SignUpView = () => {
     authClient.signIn.social(
       {
         provider: provider,
-        callbackURL: '/',
+        callbackURL: '/landing',
       },
       {
         onSuccess: () => {
           setPending(false);
           toast.success('Signed up successfully', { id: toastId });
-          router.push('/');
+          router.push('/landing');
         },
         onError: ({ error }) => {
           setPending(false);
