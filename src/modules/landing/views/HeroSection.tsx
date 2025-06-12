@@ -37,9 +37,9 @@ export const HeroSection = () => {
             <Input
               type="text"
               placeholder="Search by city, neighborhood or address"
-              className="w-full max-w-lg rounded-none rounded-l-xl border h-12 placeholder:text-primary/50 focus:placeholder:text-primary"
+              className="w-full max-w-lg rounded-none rounded-l-xl border  h-12 placeholder:text-primary/95 focus:placeholder:text-primary"
             />
-            <Button className="rounded-none rounded-r-xl border-none h-12">
+            <Button className="rounded-none rounded-r-xl border-none h-12 bg-red-400">
               Search
             </Button>
           </div>

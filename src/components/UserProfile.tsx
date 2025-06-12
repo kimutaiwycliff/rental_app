@@ -39,7 +39,8 @@ export const UserProfile = ({
       fetchOptions: {
         onSuccess: () => {
           toast.success('Logged out successfully', { id: toastId });
-          router.push('/sign-in');
+          router.replace('/landing');
+      router.refresh();
         },
         onError: () => {
           toast.error('Failed to log out', { id: toastId });
