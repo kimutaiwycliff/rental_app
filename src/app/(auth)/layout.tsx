@@ -1,4 +1,4 @@
-import { GalleryVerticalEnd } from "lucide-react";
+import { GalleryVerticalEnd } from 'lucide-react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -8,8 +8,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
             <GalleryVerticalEnd className="size-4" />
           </div>
-          Acme Inc.
-        </a>{children}</div>
+          <div className="text-xl font-bold">
+            RENT
+            <span className="text-secondary-500 font-light hover:!text-primary-300">
+              IFUL
+            </span>
+          </div>
+        </a>
+        {children}
+      </div>
     </div>
   );
 };
