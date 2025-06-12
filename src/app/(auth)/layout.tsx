@@ -1,20 +1,30 @@
-import { GalleryVerticalEnd } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10 ">
       <div className="flex w-full max-w-sm flex-col gap-6">
-        <a href="#" className="flex items-center gap-2 self-center font-medium">
-          <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-            <GalleryVerticalEnd className="size-4" />
+        <Link
+          href="/landing"
+          className="flex items-center gap-2 self-center font-medium"
+        >
+          <div className=" flex size-6 items-center justify-center rounded-md">
+            <Image
+              src="/logo.svg"
+              alt="Rentiful Logo"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
           </div>
           <div className="text-xl font-bold">
             RENT
-            <span className="text-secondary-500 font-light hover:!text-primary-300">
+            <span className=" font-light ">
               IFUL
             </span>
           </div>
-        </a>
+        </Link>
         {children}
       </div>
     </div>

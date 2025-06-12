@@ -34,7 +34,7 @@ export const Navbar = () => {
           <Link href="/" className="cursor-pointer" scroll={false}>
             <div className="flex items-center gap-3">
               <Image
-                src="/file.svg"
+                src="/logo.svg"
                 alt="Rentiful Logo"
                 width={24}
                 height={24}

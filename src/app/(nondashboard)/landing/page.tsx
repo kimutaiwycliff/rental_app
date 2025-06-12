@@ -1,6 +1,8 @@
-const Page = () => {
+import { HeroSection } from "@/modules/landing/views/HeroSection"
+
+const Landing = () => {
   return (
-    <div>Page</div>
+    <div><HeroSection /></div>
   )
 }
-export default Page
+export default Landing
