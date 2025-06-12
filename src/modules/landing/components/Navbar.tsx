@@ -10,7 +10,18 @@ import { Plus, Search } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  // Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10); // trigger blur after 10px scroll
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const trpc = useTRPC();
   const { data: userSession } = useSuspenseQuery(
     trpc.session.getMany.queryOptions()
@@ -21,7 +32,9 @@ export const Navbar = () => {
     pathname.includes('/manager') || pathname.includes('/tenant');
   return (
     <div
-      className="fixed top-0 left-0 w-full z-50 shadow-xl"
+      className={`fixed top-0 left-0 w-full z-50 shadow-xl transition-all duration-300 ${
+        isScrolled ? 'backdrop-blur-md bg-white/30 dark:bg-black/30' : ''
+      }`}
       style={{ height: `${NAVBAR_HEIGHT}px` }}
     >
       <div className="flex justify-between items-center w-full py-3 px-8">
