@@ -85,8 +85,8 @@ export const UserProfile = ({
             onClick={() =>
               router.push(
                 role.toLowerCase() === 'manager'
-                  ? '/managers/properties'
-                  : '/tenants/favorites',
+                  ? '/manager'
+                  : '/tenant',
                 { scroll: false }
               )
             }
