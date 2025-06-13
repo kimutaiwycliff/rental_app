@@ -1,5 +1,4 @@
 'use client';
-import { ModeToggle } from '@/components/providers/theme-toggler';
 import { Button } from '@/components/ui/button';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { UserProfile } from '@/components/UserProfile';
@@ -119,7 +118,6 @@ export const Navbar = () => {
               </Link>
             </>
           )}
-          <ModeToggle />
         </div>
       </div>
     </div>

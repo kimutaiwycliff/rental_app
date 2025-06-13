@@ -20,7 +20,7 @@ import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
-import { GeneratedAvatar } from '@/modules/landing/components/NavUser';
+import { GeneratedAvatar } from '@/components/sidebar/NavUser';
 
 export const UserProfile = ({
   name,
