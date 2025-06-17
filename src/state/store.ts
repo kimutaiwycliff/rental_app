@@ -2,10 +2,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import counterReducer from './features/counterSlice';
+import globalReducer from './features/global';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    global: globalReducer,
   },
 });
 
