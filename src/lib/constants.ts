@@ -18,6 +18,11 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  LucideIcon,
+  Building,
+  Castle,
+  Trees,
+  Warehouse,
 } from 'lucide-react';
 
 // NAVBAR HEIGHT
@@ -183,4 +188,22 @@ export const SidebarItemsCollapsible = {
       icon: Map,
     },
   ],
+};
+
+export enum PropertyTypeEnum {
+  Rooms = "Rooms",
+  Tinyhouse = "Tinyhouse",
+  Apartment = "Apartment",
+  Villa = "Villa",
+  Townhouse = "Townhouse",
+  Cottage = "Cottage",
+}
+
+export const PropertyTypeIcons: Record<PropertyTypeEnum, LucideIcon> = {
+  Rooms: Home,
+  Tinyhouse: Warehouse,
+  Apartment: Building,
+  Villa: Castle,
+  Townhouse: Home,
+  Cottage: Trees,
 };
