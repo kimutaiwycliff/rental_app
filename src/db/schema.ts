@@ -190,3 +190,12 @@ export const tenantProperties = pgTable("tenant_properties", {
   tenantId: text('tenant_id').notNull().references(() => user.id),
   propertyId: integer('property_id').notNull().references(() => property.id)
 });
+
+export const agents = pgTable("agents", {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  userId: text('user_id').notNull().references(() => user.id, { onDelete: 'cascade' }),
+  instructions: text('instructions').notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull()
+});

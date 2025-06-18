@@ -20,3 +20,10 @@ export const SignUpSchema = z
   });
 
 export type SignUpFormData = z.infer<typeof SignUpSchema>;
+
+export const agentInsertSchema = z.object({
+  name: z.string().min(1, { message: 'Name is required' }),
+  instructions: z.string().min(1, { message: 'Instructions are required' }),
+})
+
+export type AgentInsertFormData = z.infer<typeof agentInsertSchema>;

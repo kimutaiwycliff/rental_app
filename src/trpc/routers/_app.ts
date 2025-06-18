@@ -1,5 +1,6 @@
 import { baseProcedure, createTRPCRouter } from '../init';
 import { auth } from '@/lib/auth';
+import { agentsRouter } from '@/modules/agents/procedures';
 import { headers } from 'next/headers';
 
 const sessionRouter = createTRPCRouter({
@@ -11,7 +12,8 @@ const sessionRouter = createTRPCRouter({
   })
 });
 export const appRouter = createTRPCRouter({
-  session: sessionRouter
+  session: sessionRouter,
+  agents: agentsRouter
 });
 // export type definition of API
 export type AppRouter = typeof appRouter;
