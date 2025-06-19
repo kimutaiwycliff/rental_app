@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "maplibre-gl/dist/maplibre-gl.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,4 +120,15 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 18px;
+  padding: 6px 8px;
+}
+
+
+.maplibregl-popup-content {
+  all: unset;
+  display: contents; /* prevents default padding and box */
 }

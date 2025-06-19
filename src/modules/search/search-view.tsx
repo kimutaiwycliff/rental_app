@@ -8,6 +8,7 @@ import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { FiltersBar } from './components/FilterBar';
 import { FiltersFull } from './components/FiltersFull';
+import Map from '@/components/map';
 
 export const SearchView = () => {
   const searchParams = useSearchParams();
@@ -75,8 +76,8 @@ export const SearchView = () => {
         >
           <FiltersFull />
         </div>
-        {/* <Map /> */}
-        <div className="basis-4/12 overflow-y-auto">{/* <Listings /> */}</div>
+        <Map />
+        {/* <div className="basis-4/12 overflow-y-auto"><Listings /></div> */}
       </div>
     </div>
   );

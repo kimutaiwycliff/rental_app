@@ -66,3 +66,34 @@ export function formatEnumString(str: string) {
   return str.replace(/([A-Z])/g, " $1").trim();
 }
 
+/**
+ * Format a timestamp for display in a UI component.
+ *
+ * @param timestamp The timestamp to format, as a string, number, or Date
+ *                  object.
+ * @returns A string representing the formatted timestamp.
+ */
+export const formatDate = (timestamp: string | number | Date): string => {
+  return new Date(timestamp).toLocaleString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+};
+
+/**
+ * Get a color based on the magnitude of an earthquake.
+ *
+ * @param mag The magnitude of the earthquake, or null/undefined if unknown.
+ * @returns A color string representing the magnitude, ranging from green
+ *          (low magnitude) to red (high magnitude).
+ */
+export const getMagnitudeColor = (mag: number | null | undefined): string => {
+  if (!mag) return '#52c41a';
+  if (mag > 5) return '#ff4d4f';
+  if (mag > 3) return '#faad14';
+  return '#52c41a';
+};
+
