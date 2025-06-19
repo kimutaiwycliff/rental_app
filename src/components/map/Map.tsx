@@ -19,6 +19,7 @@ import {
 } from './Layers';
 import ControlPanel, { BasemapSwitcher } from './ControlPanel';
 import { formatDate, getMagnitudeColor } from '@/lib/utils';
+import GeocoderControl from './Geocoder';
 
 type Basemap = {
   id: string;
@@ -141,6 +142,7 @@ const MapComponent = () => {
         <FullscreenControl position="top-left" />
         <NavigationControl position="top-left" />
         <ScaleControl />
+        <GeocoderControl position="top-right" marker={true} />
 
         <Source
           id="earthquakes"
