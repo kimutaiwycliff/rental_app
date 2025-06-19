@@ -241,7 +241,7 @@ export const FiltersBar = () => {
             variant="ghost"
             className={cn(
               'px-3 py-1 rounded-none rounded-l-xl ',
-              viewMode === 'list' ? 'bg-primary/85 text-primary/80' : ''
+              viewMode === 'list' ? 'bg-primary/40 text-primary' : ''
             )}
             onClick={() => dispatch(setViewMode('list'))}
           >
@@ -251,7 +251,7 @@ export const FiltersBar = () => {
             variant="ghost"
             className={cn(
               'px-3 py-1 rounded-none rounded-r-xl ',
-              viewMode === 'grid' ? 'bg-primary/85 text-primary/80' : ''
+              viewMode === 'grid' ? 'bg-primary/40 text-primary' : ''
             )}
             onClick={() => dispatch(setViewMode('grid'))}
           >

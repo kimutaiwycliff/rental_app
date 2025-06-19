@@ -102,7 +102,7 @@ export const FiltersFull = () => {
       <div className="flex flex-col space-y-6">
         {/* Location */}
         <div>
-          <h4 className="font-bold mb-2">Location</h4>
+          <h4 className="font-bold mb-2 text-sm">Location</h4>
           <div className="flex items-center">
             <Input
               placeholder="Enter location"
@@ -126,7 +126,7 @@ export const FiltersFull = () => {
 
         {/* Property Type */}
         <div>
-          <h4 className="font-bold mb-2">Property Type</h4>
+          <h4 className="font-bold mb-2 text-sm">Property Type</h4>
           <div className="grid grid-cols-2 gap-4">
             {Object.entries(PropertyTypeIcons).map(([type, Icon]) => (
               <div
@@ -153,7 +153,7 @@ export const FiltersFull = () => {
 
         {/* Price Range */}
         <div>
-          <h4 className="font-bold mb-2">Price Range (Monthly)</h4>
+          <h4 className="font-bold mb-2 text-sm">Price Range (Monthly)</h4>
           <Slider
             min={0}
             max={10000}
@@ -179,7 +179,7 @@ export const FiltersFull = () => {
         {/* Beds and Baths */}
         <div className="flex gap-4">
           <div className="flex-1">
-            <h4 className="font-bold mb-2">Beds</h4>
+            <h4 className="font-bold mb-2 text-sm">Beds</h4>
             <Select
               value={localFilters.beds || 'any'}
               onValueChange={(value) =>
@@ -199,7 +199,7 @@ export const FiltersFull = () => {
             </Select>
           </div>
           <div className="flex-1">
-            <h4 className="font-bold mb-2">Baths</h4>
+            <h4 className="font-bold mb-2 text-sm">Baths</h4>
             <Select
               value={localFilters.baths || 'any'}
               onValueChange={(value) =>
@@ -221,7 +221,7 @@ export const FiltersFull = () => {
 
         {/* Square Feet */}
         <div>
-          <h4 className="font-bold mb-2">Square Feet</h4>
+          <h4 className="font-bold mb-2 text-sm">Square Feet</h4>
           <Slider
             min={0}
             max={5000}
@@ -239,14 +239,14 @@ export const FiltersFull = () => {
             className="[&>.bar]:bg-primary-700"
           />
           <div className="flex justify-between mt-2">
-            <span>{localFilters.squareFeet[0] ?? 0} sq ft</span>
-            <span>{localFilters.squareFeet[1] ?? 5000} sq ft</span>
+            <span className='text-sm'>{localFilters.squareFeet[0] ?? 0} sq ft</span>
+            <span className='text-sm'>{localFilters.squareFeet[1] ?? 5000} sq ft</span>
           </div>
         </div>
 
         {/* Amenities */}
         <div>
-          <h4 className="font-bold mb-2">Amenities</h4>
+          <h4 className="font-bold mb-2 text-sm">Amenities</h4>
           <div className="flex flex-wrap gap-2">
             {Object.entries(AmenityIcons).map(([amenity, Icon]) => (
               <div
@@ -260,7 +260,7 @@ export const FiltersFull = () => {
                 onClick={() => handleAmenityChange(amenity as AmenityEnum)}
               >
                 <Icon className="w-5 h-5 hover:cursor-pointer" />
-                <Label className="hover:cursor-pointer">
+                <Label className="hover:cursor-pointer text-sm">
                   {formatEnumString(amenity)}
                 </Label>
               </div>
@@ -270,7 +270,7 @@ export const FiltersFull = () => {
 
         {/* Available From */}
         <div>
-          <h4 className="font-bold mb-2">Available From</h4>
+          <h4 className="font-bold mb-2 text-sm">Available From</h4>
           <Input
             type="date"
             value={
